@@ -88,6 +88,6 @@ function main() {
     stats.begin()
     await seg.send({ image: cameraVideo })
     stats.end()
-  //  requestAnimationFrame(process)
+    requestAnimationFrame(process)
   }
 }
