@@ -35,8 +35,6 @@ function main() {
     cropper.process(lightCanvas, results.segmentationMask as ImageBitmap)
     mainContext!.drawImage(results.image, 0, 0, mainCanvas.width, mainCanvas.height)
     mainContext!.drawImage(cropper.getCanvas(), 0, 0, mainCanvas.width, mainCanvas.height)
-    stats.end()
-    requestAnimationFrame(process)
   })
 
   const mainCanvas = document.createElement("canvas")
@@ -89,5 +87,7 @@ function main() {
   async function process () {
     stats.begin()
     await seg.send({ image: cameraVideo })
+    stats.end()
+  //  requestAnimationFrame(process)
   }
 }
