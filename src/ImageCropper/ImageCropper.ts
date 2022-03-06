@@ -126,6 +126,9 @@ export class ImageCropper {
     var offset = 0;
     var count = 6;
     gl.drawArrays(primitiveType, offset, count);
+
+    gl.deleteTexture(cropTargetTexture);
+    gl.deleteTexture(maskTexture);
   }
 
   createTexture(image: HTMLCanvasElement | ImageBitmap) {
